@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { DataGrid } from '@mui/x-data-grid';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,9 +22,11 @@ function App() {
 
   return (
     <>
-      <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-      </button>
+      <Stack spacing={2} direction="row">
+        <Button variant="text" onClick={() => setCount((count) => count + 1)}>{count}</Button>
+        <Button variant="contained" onClick={() => setCount((count) => count + 1)}>{count}</Button>
+        <Button variant="outlined" onClick={() => setCount((count) => count + 1)}>{count}</Button>
+      </Stack>
       <DataGrid rows={rows} columns={columns} />
     </>
   )
