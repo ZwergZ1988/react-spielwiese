@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { DataGrid } from '@mui/x-data-grid';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import { useState } from "react";
+import PropTypes from "prop-types";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { Routes, Route, Link as RouterLink } from "react-router-dom";
+import { Button, Stack } from "@mui/material";
+import Data from "./components/Data";
+import Knopf from "./components/Knopf";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  const rows = [
-    { id: 1, col1: 'Hello', col2: 'World' },
-    { id: 2, col1: 'DataGridPro', col2: 'is Awesome' },
-    { id: 3, col1: 'MUI', col2: 'is Amazing' },
-  ];
-  
-  const columns = [
-    { field: 'col1', headerName: 'Column 1', width: 150 },
-    { field: 'col2', headerName: 'Column 2', width: 150 },
-  ];
-
   return (
     <>
       <Stack spacing={2} direction="row">
-        <Button variant="text" onClick={() => setCount((count) => count + 1)}>{count}</Button>
-        <Button variant="contained" onClick={() => setCount((count) => count + 1)}>{count}</Button>
-        <Button variant="outlined" onClick={() => setCount((count) => count + 1)}>{count}</Button>
+        <Button component={RouterLink} to="/">
+          HOME
+        </Button>
+        <Button component={RouterLink} to="/data">
+          DATA
+        </Button>
+        <Button component={RouterLink} to="/knopf">
+          KNOPF
+        </Button>
       </Stack>
-      <DataGrid rows={rows} columns={columns} />
+      <Routes>
+        <Route path="/" element={<Data />} />
+        <Route path="/data" element={<Data />} />
+        <Route path="/knopf" element={<Knopf />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
