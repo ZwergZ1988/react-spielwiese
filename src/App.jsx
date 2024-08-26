@@ -17,9 +17,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import HomeIcon from '@mui/icons-material/Home';
-import GamepadIcon from '@mui/icons-material/Gamepad';
-import TableChartIcon from '@mui/icons-material/TableChart';
+import HomeIcon from "@mui/icons-material/Home";
+import GamepadIcon from "@mui/icons-material/Gamepad";
+import TableChartIcon from "@mui/icons-material/TableChart";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 
@@ -76,7 +76,7 @@ function App() {
               <ListItemIcon>
                 <GamepadIcon />
               </ListItemIcon>
-              <ListItemText primary="Knopf" /> 
+              <ListItemText primary="Knopf" />
             </ListItemButton>
           </ListItem>
         </List>
