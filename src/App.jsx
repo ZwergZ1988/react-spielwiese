@@ -7,6 +7,7 @@ import { Routes, Route, Link as RouterLink } from "react-router-dom";
 import { Button, Stack } from "@mui/material";
 import Data from "./components/Data";
 import Knopf from "./components/Knopf";
+import Graph from "./components/Graph";
 import Drawer from "@mui/material/Drawer";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -19,6 +20,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import GamepadIcon from "@mui/icons-material/Gamepad";
+import SsidChartIcon from "@mui/icons-material/SsidChart";
 import TableChartIcon from "@mui/icons-material/TableChart";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -79,6 +81,14 @@ function App() {
               <ListItemText primary="Knopf" />
             </ListItemButton>
           </ListItem>
+          <ListItem key="Graph" disablePadding>
+            <ListItemButton component={RouterLink} to="/graph">
+              <ListItemIcon>
+                <SsidChartIcon />
+              </ListItemIcon>
+              <ListItemText primary="Graph" />
+            </ListItemButton>
+          </ListItem>
         </List>
       </Drawer>
       <Box
@@ -89,6 +99,7 @@ function App() {
           <Route path="/" element={<></>} />
           <Route path="/data" element={<Data />} />
           <Route path="/knopf" element={<Knopf />} />
+          <Route path="/graph" element={<Graph />} />
         </Routes>
       </Box>
     </Box>
